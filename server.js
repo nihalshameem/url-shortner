@@ -2,7 +2,7 @@ const express = require('express');
 const passport = require('passport');
 const session = require('express-session');
 const mongoose = require('mongoose');
-const connectDB = require('./config');
+const connectDB = require('./src/config');
 const { Strategy: GoogleStrategy } = require('passport-google-oauth20');
 require('dotenv').config();
 
