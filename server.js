@@ -1,5 +1,4 @@
 const express = require('express');
-const serverless = require('serverless-http');
 const passport = require('passport');
 const session = require('express-session');
 const mongoose = require('mongoose');
@@ -9,9 +8,6 @@ require('dotenv').config();
 
 // Initialize Express app
 const app = express();
-
-// Important: Export the handler function
-exports.handler = serverless(app);
 
 // Connect to MongoDB
 connectDB();
