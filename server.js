@@ -58,7 +58,19 @@ passport.use(new GoogleStrategy({
 passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser((id, done) => User.findById(id).then((user) => done(null, user)));
 
-// Google authentication routes
+// home route
+app.get("/", async (req, res) => {
+
+  try {
+    res
+      .status(200)
+      .json({ message: "App works", status: "success" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error", status: "error" });
+  }
+});
+
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 app.get('/auth/google/callback',
