@@ -1,6 +1,6 @@
 [build]
-  functions = "netlify/functions" # Path to your function directory
-  publish = "build"  # Or your project's build directory if you have one. If you don't have a build step, you can omit the publish key.
+  functions = "netlify/functions"
+  publish = "dist"  # Changed to "dist"
 
 [dev]
   framework = "#static" # Use this to avoid any local server issues
